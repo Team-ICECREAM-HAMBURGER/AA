@@ -23,8 +23,6 @@ public class MissileController : MonoBehaviour {
     
     
     private void Init() {
-        if (this._potentialTargets is null) return;
-        
         this._isHit = false;
         this.missileObject.SetActive(true);
         this.missileFX.Play();
@@ -36,6 +34,8 @@ public class MissileController : MonoBehaviour {
         this.MissileSpeed = this.missileData.speed;
         
         this._potentialTargets = GameObject.FindGameObjectsWithTag("Player");
+        
+        if (this._potentialTargets is null) return;
         
         var index = Random.Range(0, this._potentialTargets.Length);
         this._target = this._potentialTargets[index].transform;
