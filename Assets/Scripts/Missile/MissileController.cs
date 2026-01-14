@@ -12,9 +12,7 @@ public class MissileController : MonoBehaviour {
     [Space(10f)]
     [SerializeField] private ParticleSystem missileFX;
     [SerializeField] private ParticleSystem explosionFX;
-
-    public float MissileDmg { get; private set; }
-    public float MissileSpeed { get; private set; }
+    
     
     private bool _isHit;
     private Transform _target;
@@ -29,9 +27,6 @@ public class MissileController : MonoBehaviour {
         this.explosionFX.Stop();
 
         this.missileRB.constraints = RigidbodyConstraints.FreezeRotation;
-        
-        this.MissileDmg = this.missileData.dmg;
-        this.MissileSpeed = this.missileData.speed;
         
         this._potentialTargets = GameObject.FindGameObjectsWithTag("Player");
         
@@ -72,12 +67,14 @@ public class MissileController : MonoBehaviour {
         if (this._isHit) return;
         if (this._target is null) return;
         
-        this.missileRB.linearVelocity = this.transform.forward * this.MissileSpeed;
+        this.missileRB.linearVelocity = this.transform.forward * this.missileData.speed;
     }
 
     private void OnCollisionEnter(Collision other) {
         this._isHit = true;
         this.missileRB.isKinematic = true;
+        
+        // TODO: DMG
         
         this.missileObject.SetActive(false);
         this.missileFX.Stop();

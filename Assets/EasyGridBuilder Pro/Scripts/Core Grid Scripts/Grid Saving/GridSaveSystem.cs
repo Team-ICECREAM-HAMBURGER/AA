@@ -23,14 +23,14 @@ namespace SoulGames.EasyGridBuilderPro
 
         public static void Save(string fileName, string saveString, bool overwrite) //Main save function
         {
-            Init(); //Call function 'Init()'
+            Init(); //Call function 'InitPool()'
             string saveFileName = fileName;
             File.WriteAllText(saveFolder + saveFileName + "." + SAVE_EXTENSION, saveString); //Write data to the save file
         }
 
         public static string Load(string fileName) //Main load function
         {
-            Init(); //Call function 'Init()'
+            Init(); //Call function 'InitPool()'
             if (File.Exists(saveFolder + fileName + "." + SAVE_EXTENSION)) //Check if save file exist
             {
                 string saveString = File.ReadAllText(saveFolder + fileName + "." + SAVE_EXTENSION); //Load saved data and return
