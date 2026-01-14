@@ -1,0 +1,86 @@
+using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class MissileController : MonoBehaviour {
+    [SerializeField] private MissileData missileData;
+    
+    [Space(25f)]
+    
+    [SerializeField] private GameObject missileObject;
+    [SerializeField] private Rigidbody missileRB;
+    [Space(10f)]
+    [SerializeField] private ParticleSystem missileFX;
+    [SerializeField] private ParticleSystem explosionFX;
+
+    public float MissileDmg { get; private set; }
+    public float MissileSpeed { get; private set; }
+    
+    private bool _isHit;
+    private Transform _target;
+    private GameObject[] _potentialTargets;
+    private Vector3 _targetDirection;
+    
+    
+    private void Init() {
+        if (this._potentialTargets is null) return;
+        
+        this._isHit = false;
+        this.missileObject.SetActive(true);
+        this.missileFX.Play();
+        this.explosionFX.Stop();
+
+        this.missileRB.constraints = RigidbodyConstraints.FreezeRotation;
+        
+        this.MissileDmg = this.missileData.dmg;
+        this.MissileSpeed = this.missileData.speed;
+        
+        this._potentialTargets = GameObject.FindGameObjectsWithTag("Player");
+        
+        var index = Random.Range(0, this._potentialTargets.Length);
+        this._target = this._potentialTargets[index].transform;
+    }
+
+    private void Awake() {
+        Init();
+    }
+
+    private void OnEnable() {
+        Init();
+    }
+
+    private void FixedUpdate() {
+        Launch();
+    }
+
+    private void Update() {
+        RotateToTarget();
+    }
+
+    private void RotateToTarget() {
+        if (this._isHit) return;
+        if (this._target is null) return;
+
+        this._targetDirection = (this._target.position - this.transform.position).normalized;
+        
+        if (this._targetDirection != Vector3.zero) {
+            this.transform.rotation = Quaternion.LookRotation(this._targetDirection);
+        }
+    }
+    
+    private void Launch() {
+        if (this._isHit) return;
+        if (this._target is null) return;
+        
+        this.missileRB.linearVelocity = this.transform.forward * this.MissileSpeed;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        this._isHit = true;
+        this.missileRB.isKinematic = true;
+        
+        this.missileObject.SetActive(false);
+        this.missileFX.Stop();
+        this.explosionFX.Play();
+    }
+}
