@@ -19,6 +19,7 @@ public class TurretProjectileSpawnController :
     }
 
     protected override void OnCreateObject(GCEnumManager.TURRET_TYPE type, Projectile obj) {
+        // InitPool(type);
         // obj.Init(this._poolDic[type]);  // TODO: InitPool()
     }
 

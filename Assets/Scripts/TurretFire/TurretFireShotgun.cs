@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TurretFireLaserStrategy : ITurretFireStrategy {
+public class TurretFireShotgun : ITurretFire {
     private TurretFireData turretFireData;  // <- TurretController
 
     
@@ -8,7 +8,7 @@ public class TurretFireLaserStrategy : ITurretFireStrategy {
         this.turretFireData = turretFireData;
     }
 
-    public void Fire(Transform origin, Transform target) {
+    public void Fire(Transform origin, Vector3 direction) {
         throw new System.NotImplementedException();
     }
 

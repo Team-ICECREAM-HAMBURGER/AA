@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.Pool;
 
-public class TurretFireMissileStrategy : ITurretFireStrategy {
+public class TurretFireNormal : ITurretFire {
     private TurretFireData turretFireData;  // <- TurretController
     
     
     public void Init(TurretFireData turretFireData) {
         this.turretFireData = turretFireData;
-        
-        // Object Pooling
     }
 
-    public void Fire(Transform origin, Transform target) {
+    public void Fire(Transform origin, Vector3 direction) {
         throw new System.NotImplementedException();
     }
 
