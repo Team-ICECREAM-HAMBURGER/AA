@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 public class InputProviderPCStrategy : IInputProvider {
     private InputSystemPC _pcInputSystem;
     private Camera _mainCamera;
-    private Vector2 _playerPosition;
+    private Vector3 _playerPosition;
     
     
-    public InputProviderPCStrategy(Camera mainCamera, Vector2 playerPosition) {
+    public InputProviderPCStrategy(Camera mainCamera, Vector3 playerPosition) {
         this._pcInputSystem = new();
         this._pcInputSystem.TurretControl.Enable();
 
@@ -16,7 +16,7 @@ public class InputProviderPCStrategy : IInputProvider {
         this._playerPosition = playerPosition;
     }
     
-    public Vector2 GetAimDirection() {
+    public Vector3 GetAimDirection() {
         Vector2 centerPosition = this._mainCamera.WorldToScreenPoint(this._playerPosition);
         var aimPosition = this._pcInputSystem.TurretControl.Aim.ReadValue<Vector2>();
         var aimDirection = (aimPosition - centerPosition).normalized;

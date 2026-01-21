@@ -5,15 +5,17 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
     private IInputProvider _inputProvider;
     private Dictionary<GCEnumManager.TURRET_TYPE, List<TurretController>> _turretMap = new();
     
-    private Vector2 turretAimDirection;
+    private Vector3 turretAimDirection;
     private bool isFiring;
     private bool isSwitching;
+    private GCEnumManager.TURRET_TYPE currentType;
     
     
     private void Init() {
+        this.currentType = GCEnumManager.TURRET_TYPE.NORMAL; 
         this._inputProvider = PlayerInputManager.Instance.CurrentInputProvider;
     }
-
+    
     private void Start() {
         Init();
     }
@@ -31,7 +33,7 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
         this.isSwitching = this._inputProvider.isSwitchPressed();
         
         // Input
-        if (this.turretAimDirection != Vector2.zero) {  // Joystick
+        if (this.turretAimDirection != Vector3.zero) {  // Joystick
             RotateTurrets(this.turretAimDirection);
         }
 
@@ -58,8 +60,13 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
         this._turretMap[type].Remove(turret);
     }
 
-    private void RotateTurrets(Vector2 aimDirection) {
-        // TODO: 딕셔너리 내에 있는 터릿들을 foreach()로 회전 
+    private void RotateTurrets(Vector3 aimDirection) {
+        // TODO: 딕셔너리 내에 있는 터릿들을 foreach()로 회전
+        if (aimDirection == Vector3.zero) return;
+        
+        foreach (var turret in this._turretMap[this.currentType]) {
+            turret.Rotate(aimDirection);
+        }
     }
 
     private void FireTurrets() {

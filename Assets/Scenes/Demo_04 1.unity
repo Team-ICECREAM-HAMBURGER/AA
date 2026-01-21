@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61585ecc25f4beb979cb686f2ca5ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretProjectileSpawnController
-  normalProjectile: {fileID: 0}
+  normalProjectile: {fileID: 8151750694750392927, guid: e3564b9ceefa8014286e76b1a8698761, type: 3}
   laserProjectile: {fileID: 0}
   shotgunProjectile: {fileID: 0}
   missileProjectile: {fileID: 0}

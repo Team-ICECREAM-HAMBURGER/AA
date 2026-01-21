@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class InputProviderConsoleStrategy : IInputProvider {
-    public Vector2 GetAimDirection() {
+    public Vector3 GetAimDirection() {
         throw new System.NotImplementedException();
     }
     

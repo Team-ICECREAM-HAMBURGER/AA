@@ -17,7 +17,7 @@ public class PlayerInputManager : GCSingletonImplementer<PlayerInputManager> {
             new InputProviderWebStrategy() : new InputProviderPCStrategy(this._mainCamera, this._playerPosition);
     }
 
-    private void Awake() {
+    public override void Awake() {
         Init();
     }
 }

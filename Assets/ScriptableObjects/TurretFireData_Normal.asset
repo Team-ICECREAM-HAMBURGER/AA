@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretFireData
   rpm: 5
   dmg: 5
+  rotateSpeed: 1
   projectilePrefab: {fileID: 990503603428727782, guid: e3564b9ceefa8014286e76b1a8698761, type: 3}
   turretType: 2
