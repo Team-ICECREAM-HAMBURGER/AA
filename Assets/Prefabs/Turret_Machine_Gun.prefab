@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretController
   firePoint: {fileID: 4024938433699781199}
-  turretData: {fileID: 11400000, guid: f99fa614310969348a741155e4015eff, type: 2}
+  turretData: {fileID: 11400000, guid: c60f10723af92234982cc384830d6643, type: 2}
 --- !u!1 &6222056649117501359
 GameObject:
   m_ObjectHideFlags: 0

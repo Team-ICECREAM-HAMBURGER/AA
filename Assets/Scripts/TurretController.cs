@@ -44,15 +44,13 @@ public class TurretController : MonoBehaviour {
     }
     
     public void Rotate(Vector3 aimDirection) {
-        // if (aimDirection == Vector3.zero) return;
-        //
-        // var maxRotationAngle = 45f;
-        // aimDirection.x *= maxRotationAngle;
-        // var targetRotation = Quaternion.Euler(-aimDirection.x, 0, 0);
-        //
-        // this.transform.rotation = Quaternion.Slerp(
-        //     this.transform.rotation, 
-        //     targetRotation, 
-        //     this.turretData.rotateSpeed * Time.deltaTime);
+        if (aimDirection == Vector3.zero) return;
+
+        var aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.z) * Mathf.Rad2Deg;
+        aimAngle = Mathf.Clamp(aimAngle, -this.turretData.rotateAngle, this.turretData.rotateAngle);
+        
+        var targetRotation = Quaternion.Euler(-aimAngle, 0, 0);
+        this.transform.rotation 
+            = Quaternion.Slerp(this.transform.rotation, targetRotation, this.turretData.rotateSpeed * Time.deltaTime);
     }
 }

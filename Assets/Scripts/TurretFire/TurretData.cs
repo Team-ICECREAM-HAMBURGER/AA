@@ -4,7 +4,7 @@
 public class TurretData : ScriptableObject {
     public float rpm;
     public float dmg;
-    public float rotateMaxAngle;
+    public float rotateAngle;
     public float rotateSpeed;
     public GameObject projectilePrefab;
     public GCEnumManager.TURRET_TYPE turretType;
