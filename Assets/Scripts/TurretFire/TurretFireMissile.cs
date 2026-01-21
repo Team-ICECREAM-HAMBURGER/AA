@@ -2,11 +2,11 @@
 using UnityEngine.Pool;
 
 public class TurretFireMissile : ITurretFire {
-    private TurretFireData turretFireData;  // <- TurretController
+    private TurretData turretData;  // <- TurretController
     
     
-    public void Init(TurretFireData turretFireData) {
-        this.turretFireData = turretFireData;
+    public void Init(TurretData turretData) {
+        this.turretData = turretData;
         
         // Object Pooling
     }

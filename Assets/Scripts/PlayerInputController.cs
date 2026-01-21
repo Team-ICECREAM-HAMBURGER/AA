@@ -61,12 +61,12 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
     }
 
     private void RotateTurrets(Vector3 aimDirection) {
-        // TODO: 딕셔너리 내에 있는 터릿들을 foreach()로 회전
-        if (aimDirection == Vector3.zero) return;
-        
-        foreach (var turret in this._turretMap[this.currentType]) {
-            turret.Rotate(aimDirection);
-        }
+        // // TODO: 딕셔너리 내에 있는 터릿들을 foreach()로 회전
+        // if (aimDirection == Vector3.zero) return;
+        //
+        // foreach (var turret in this._turretMap[this.currentType]) {
+        //     turret.Rotate(aimDirection);
+        // }
     }
 
     private void FireTurrets() {

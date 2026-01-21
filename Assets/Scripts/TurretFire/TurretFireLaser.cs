@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 public class TurretFireLaser : ITurretFire {
-    private TurretFireData turretFireData;  // <- TurretController
+    private TurretData turretData;  // <- TurretController
 
     
-    public void Init(TurretFireData turretFireData) {
-        this.turretFireData = turretFireData;
+    public void Init(TurretData turretData) {
+        this.turretData = turretData;
     }
 
     public void Fire(Transform origin, Vector3 direction) {

@@ -4,24 +4,24 @@ using System.Reflection;
 
 public class TurretController : MonoBehaviour {
     [SerializeField] private Transform firePoint;
-    [SerializeField] private TurretFireData turretFireData; // SO
+    [SerializeField] private TurretData turretData; // SO
     
     private ITurretFire turretFire;
 
 
     private void Init() {
         // Reflection
-        var className = "TurretFire" + this.turretFireData.turretType.ToString() + "Strategy";
+        var className = "TurretFire" + this.turretData.turretType.ToString() + "Strategy";
         var classType = Type.GetType(className);
 
         if (classType == null) return;
 
         this.turretFire = (ITurretFire)Activator.CreateInstance(classType);
-        this.turretFire.Init(this.turretFireData);
+        this.turretFire.Init(this.turretData);
     }
 
     private void OnEnable() {
-        PlayerInputController.Instance.RegisterTurret(this, this.turretFireData.turretType);
+        PlayerInputController.Instance.RegisterTurret(this, this.turretData.turretType);
     }
 
     private void Awake() {
@@ -31,7 +31,7 @@ public class TurretController : MonoBehaviour {
     private void OnDisable() {
         if (PlayerInputController.Instance == null) return;
         
-        PlayerInputController.Instance.UnregisterTurret(this, this.turretFireData.turretType);
+        PlayerInputController.Instance.UnregisterTurret(this, this.turretData.turretType);
     }
 
     public void Fire(Vector3 direction) {
@@ -42,26 +42,17 @@ public class TurretController : MonoBehaviour {
     public void StopFire() {
         this.turretFire.StopFire();
     }
-
-    // public void Rotate(Vector3 aimDirection) {
-    //     this.transform.rotation = Quaternion.RotateTowards(
-    //         this.transform.rotation, 
-    //         Quaternion.LookRotation(aimDirection), 
-    //         this.turretFireData.rotateSpeed + Time.deltaTime);
-    // }
     
     public void Rotate(Vector3 aimDirection) {
-        if (aimDirection == Vector3.zero) return;
-
-        var maxRotationAngle = 45f;
-        aimDirection.x *= maxRotationAngle;
-        // 2. 2D 평면 환경(X, Y축 사용)에서 회전은 Z축을 기준으로 돌아야 합니다.
-        var targetRotation = Quaternion.Euler(-aimDirection.x, 0, 0);
-
-        // 3. rotateSpeed에 Time.deltaTime을 곱하여 부드럽게 회전
-        this.transform.rotation = Quaternion.Slerp(
-            this.transform.rotation, 
-            targetRotation, 
-            this.turretFireData.rotateSpeed * Time.deltaTime);
+        // if (aimDirection == Vector3.zero) return;
+        //
+        // var maxRotationAngle = 45f;
+        // aimDirection.x *= maxRotationAngle;
+        // var targetRotation = Quaternion.Euler(-aimDirection.x, 0, 0);
+        //
+        // this.transform.rotation = Quaternion.Slerp(
+        //     this.transform.rotation, 
+        //     targetRotation, 
+        //     this.turretData.rotateSpeed * Time.deltaTime);
     }
 }

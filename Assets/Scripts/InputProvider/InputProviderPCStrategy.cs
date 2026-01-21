@@ -19,7 +19,7 @@ public class InputProviderPCStrategy : IInputProvider {
     public Vector3 GetAimDirection() {
         Vector2 centerPosition = this._mainCamera.WorldToScreenPoint(this._playerPosition);
         var aimPosition = this._pcInputSystem.TurretControl.Aim.ReadValue<Vector2>();
-        var aimDirection = (aimPosition - centerPosition).normalized;
+        var aimDirection = (aimPosition - centerPosition);
         
         return aimDirection;
     }

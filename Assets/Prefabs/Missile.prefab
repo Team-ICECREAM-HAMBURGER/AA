@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6916780338128094933}
   - component: {fileID: 8078576782772344574}
   - component: {fileID: 3953214308068973665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,9 +110,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7177790882984631291}
     m_Modifications:
+    - target: {fileID: 529968934, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 885052112493462012, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 885052112669815828, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
       propertyPath: m_Name
       value: FX_Explosion_A_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 885052112669815828, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 885052112669815833, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,6 +166,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 885052113644443755, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 885052114548082997, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546406928507928532, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715659161253710576, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018131755549113159, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610646678184827, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610647136972263, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610647205150534, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610647303821336, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610647453361983, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610647803737300, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610648042613731, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610648157409456, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056610648503259560, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571320337038199794, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571320338740648387, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571320338859867698, guid: c2e02f13124381e4c8a851149cd599da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -180,6 +260,10 @@ PrefabInstance:
     - target: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
       propertyPath: m_Name
       value: FX_Trail_Dust_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049843463841446, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4885001493786356, guid: 2966910701d40974c87f0338bb5694e3, type: 3}
       propertyPath: m_LocalScale.x
@@ -279,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 3760121567355238383, guid: 883ee34709c1e0349a3afa11b46e1399, type: 3}
       propertyPath: m_Name
       value: Bullet_50mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 3760121567355238383, guid: 883ee34709c1e0349a3afa11b46e1399, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3760121567355238383, guid: 883ee34709c1e0349a3afa11b46e1399, type: 3}
       propertyPath: m_IsActive

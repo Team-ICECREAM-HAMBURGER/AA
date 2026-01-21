@@ -884,6 +884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a948f7d9d4182886baf01944de875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputController
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &198960556
 MonoBehaviour:
   m_ObjectHideFlags: 0
