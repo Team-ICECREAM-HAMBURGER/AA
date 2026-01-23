@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83d8073d5734fcea27e80b2c48d465c, type: 3}
   m_Name: TurretData_Normal
   m_EditorClassIdentifier: Assembly-CSharp::TurretData
-  rpm: 5
+  rpm: 60
   dmg: 5
   rotateAngle: 45
-  rotateSpeed: 0.5
+  rotateSpeed: 25
   projectilePrefab: {fileID: 990503603428727782, guid: e3564b9ceefa8014286e76b1a8698761, type: 3}
   turretType: 2

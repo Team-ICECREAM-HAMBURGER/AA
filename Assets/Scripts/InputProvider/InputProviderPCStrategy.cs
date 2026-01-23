@@ -3,12 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputProviderPCStrategy : IInputProvider {
-    private const float MOUSE_SENSITIVITY = 0.5f;
+    private const float MOUSE_SENSITIVITY = 0.1f;
     private const float LOOK_DISTANCE = 1000.0f;
     
     private InputSystemPC _pcInputSystem;
-    private Camera _mainCamera;
-    
     private Vector3 _pivotPosition;
     private float _currentPitch;
     
@@ -16,10 +14,7 @@ public class InputProviderPCStrategy : IInputProvider {
     public InputProviderPCStrategy(Camera mainCamera, Vector3 playerPosition) {
         this._pcInputSystem = new();
         this._pcInputSystem.TurretControl.Enable();
-        
-        this._mainCamera = mainCamera;
         this._pivotPosition = playerPosition;
-        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

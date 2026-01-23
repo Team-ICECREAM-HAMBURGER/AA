@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using System.Reflection;
 
 public class TurretController : MonoBehaviour {
+    [SerializeField] private Transform turretHead;
     [SerializeField] private Transform firePoint;
     [SerializeField] private TurretData turretData; // SO
     
@@ -11,10 +11,13 @@ public class TurretController : MonoBehaviour {
 
     private void Init() {
         // Reflection
-        var className = "TurretFire" + this.turretData.turretType.ToString() + "Strategy";
-        var classType = Type.GetType(className);
+        var className = "TurretFire" + this.turretData.turretType.ToString();
+        var classType = Type.GetType(className, false, true);
 
-        if (classType == null) return;
+        if (classType == null) {
+            Debug.Log("!!");
+            return;
+        }
 
         this.turretFire = (ITurretFire)Activator.CreateInstance(classType);
         this.turretFire.Init(this.turretData);
@@ -28,15 +31,24 @@ public class TurretController : MonoBehaviour {
         Init();
     }
 
+    private void Update() {
+        Debug.DrawLine(this.turretHead.transform.position, 
+            this.turretHead.position + this.turretHead.forward * 100f, Color.brown);
+    }
+
     private void OnDisable() {
         if (PlayerInputController.Instance == null) return;
         
         PlayerInputController.Instance.UnregisterTurret(this, this.turretData.turretType);
     }
 
-    public void Fire(Vector3 direction) {
+    public void Fire() {
         var origin = (this.firePoint != null) ? this.firePoint : this.transform;
-        this.turretFire.Fire(origin, direction);
+        var target = this.turretHead.position + this.turretHead.forward * 100f;
+
+        var aim = (target - origin.position).normalized;
+        
+        this.turretFire.Fire(origin, aim);
     }
 
     public void StopFire() {
@@ -50,7 +62,9 @@ public class TurretController : MonoBehaviour {
         var direction = (aimPosition - turretPosition);
 
         if (direction != Vector3.zero) {
-            this.transform.rotation = Quaternion.LookRotation(direction);
+            this.turretHead.rotation 
+                = Quaternion.RotateTowards(this.turretHead.rotation, Quaternion.LookRotation(direction), 
+                    this.turretData.rotateSpeed * Time.deltaTime);
         }
     }
 }

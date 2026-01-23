@@ -69,6 +69,9 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
 
     private void FireTurrets() {
         // TODO: 딕셔너리 내에 있는 터릿들이 공격
+        foreach (var turret in this._turretMap[this.currentType]) {
+            turret.Fire();
+        }
     }
 
     private void SwitchTurretMode() {

@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Machine_Gun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -621,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1510,6 +1518,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3147,6 +3159,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4805,6 +4821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Machine_Gun (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4950,6 +4970,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5746,6 +5770,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6609,6 +6637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Machine_Gun (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7047,6 +7079,10 @@ PrefabInstance:
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
