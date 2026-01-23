@@ -146,7 +146,7 @@ public partial class @InputSystemPC: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6d64f892-ee5f-4b99-874d-c7ed16da9f65"",
-                    ""path"": ""<Mouse>/position"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";PC"",

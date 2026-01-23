@@ -5,7 +5,7 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
     private IInputProvider _inputProvider;
     private Dictionary<GCEnumManager.TURRET_TYPE, List<TurretController>> _turretMap = new();
     
-    private Vector3 turretAimDirection;
+    private Vector3 turretAimPosition;
     private bool isFiring;
     private bool isSwitching;
     private GCEnumManager.TURRET_TYPE currentType;
@@ -28,13 +28,13 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
 
     private void InputControl() {
         // Input init; Strategy
-        this.turretAimDirection = this._inputProvider.GetAimDirection();
+        this.turretAimPosition = this._inputProvider.GetAimWorldPosition();
         this.isFiring = this._inputProvider.isFirePressed();
         this.isSwitching = this._inputProvider.isSwitchPressed();
         
         // Input
-        if (this.turretAimDirection != Vector3.zero) {  // Joystick
-            RotateTurrets(this.turretAimDirection);
+        if (this.turretAimPosition != Vector3.zero) {  // Joystick
+            RotateTurrets(this.turretAimPosition);
         }
 
         if (this.isFiring) {    // Press A
@@ -60,12 +60,10 @@ public class PlayerInputController : GCSingletonImplementer<PlayerInputControlle
         this._turretMap[type].Remove(turret);
     }
 
-    private void RotateTurrets(Vector3 aimDirection) {
+    private void RotateTurrets(Vector3 aimPosition) {
         // TODO: 딕셔너리 내에 있는 터릿들을 foreach()로 회전
-        if (aimDirection == Vector3.zero) return;
-        
         foreach (var turret in this._turretMap[this.currentType]) {
-            turret.Rotate(aimDirection);
+            turret.Rotate(aimPosition);
         }
     }
 

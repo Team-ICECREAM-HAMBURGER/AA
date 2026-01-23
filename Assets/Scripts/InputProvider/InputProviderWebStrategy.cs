@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class InputProviderWebStrategy : IInputProvider {
-    public Vector3 GetAimDirection() {
+    public Vector3 GetAimWorldPosition() {
         throw new System.NotImplementedException();
     }
     

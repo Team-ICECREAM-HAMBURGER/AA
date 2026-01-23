@@ -3,26 +3,39 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputProviderPCStrategy : IInputProvider {
+    private const float MOUSE_SENSITIVITY = 0.5f;
+    private const float LOOK_DISTANCE = 1000.0f;
+    
     private InputSystemPC _pcInputSystem;
     private Camera _mainCamera;
-    private Vector3 _playerPosition;
+    
+    private Vector3 _pivotPosition;
+    private float _currentPitch;
     
     
     public InputProviderPCStrategy(Camera mainCamera, Vector3 playerPosition) {
         this._pcInputSystem = new();
         this._pcInputSystem.TurretControl.Enable();
-
+        
         this._mainCamera = mainCamera;
-        this._playerPosition = playerPosition;
+        this._pivotPosition = playerPosition;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     
-    public Vector3 GetAimDirection() {
-        Vector2 centerPosition = this._mainCamera.WorldToScreenPoint(this._playerPosition);
-        var aimPosition = this._pcInputSystem.TurretControl.Aim.ReadValue<Vector2>();
-        Debug.Log(aimPosition);
-        var aimDirection = new Vector3(0, (aimPosition.y - centerPosition.y), 1).normalized;
-        
-        return aimDirection;
+    public Vector3 GetAimWorldPosition() {
+        var mouseDelta = this._pcInputSystem.TurretControl.Aim.ReadValue<Vector2>();
+
+        this._currentPitch += mouseDelta.y * MOUSE_SENSITIVITY;
+        this._currentPitch = Mathf.Clamp(this._currentPitch, -4f, 80f);
+
+        var radians = this._currentPitch * Mathf.Deg2Rad;
+        var y = Mathf.Sin(radians);
+        var z = Mathf.Cos(radians);
+        var lookDirection = new Vector3(0, y, z);
+
+        return this._pivotPosition + (lookDirection * LOOK_DISTANCE);
     }
     
     public bool isFirePressed() {
@@ -40,5 +53,8 @@ public class InputProviderPCStrategy : IInputProvider {
     public void Dispose() {
         this._pcInputSystem.TurretControl.Disable();
         this._pcInputSystem.Dispose();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
