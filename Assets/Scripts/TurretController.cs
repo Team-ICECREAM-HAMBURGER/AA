@@ -45,10 +45,9 @@ public class TurretController : MonoBehaviour {
     public void Fire() {
         var origin = (this.firePoint != null) ? this.firePoint : this.transform;
         var target = this.turretHead.position + this.turretHead.forward * 100f;
-
-        var aim = (target - origin.position).normalized;
+        var aimDirection = (target - origin.position).normalized;
         
-        this.turretFire.Fire(origin, aim);
+        this.turretFire.Fire(origin, aimDirection);
     }
 
     public void StopFire() {

@@ -7392,6 +7392,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4024938433699781199, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024938433699781199, guid: 4e09849de163e8842a558a541118d34b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.87
+      objectReference: {fileID: 0}
     - target: {fileID: 5727326802005173262, guid: 4e09849de163e8842a558a541118d34b, type: 3}
       propertyPath: m_Name
       value: Turret_Machine_Gun
